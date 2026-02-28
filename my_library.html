@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library | NoteVerse</title>
+    <link rel="stylesheet" href="/public/style.css"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-flex">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#FFCC00" stroke-width="2.5"/>
+                        <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="#FFCC00" stroke-width="2.5"/>
+                    </svg>
+                    <span>NoteVerse</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="student_dashboard.html" class="sidebar-link">🏠 Home</a></li>
+                <li class="active"><a href="#" class="sidebar-link">📚 My Library</a></li>
+                <li><a href="#" class="sidebar-link">⬇️ Downloads</a></li>
+                <li><a href="#" class="sidebar-link">📤 My Uploads</a></li>
+                <li><a href="#" class="sidebar-link">⚙️ Profile</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header animate-fade-down">
+                <div class="welcome-text">
+                    <h1>My Personal Library 📚</h1>
+                    <p>All your saved and uploaded resources in one place.</p>
+                </div>
+            </header>
+
+            <div class="library-stats animate-fade-up">
+                <div class="stat-item"><strong>12</strong> Notes Saved</div>
+                <div class="stat-item"><strong>5</strong> Uploads</div>
+                <div class="stat-item"><strong>BCA 1st Sem</strong> Active Track</div>
+            </div>
+
+            <div class="notes-grid-section animate-fade-up delay-1">
+                <div class="grid-header">
+                    <h2 class="section-title">Saved Notes</h2>
+                    <div class="view-options">
+                        <button class="active">Grid View</button>
+                        <button>List View</button>
+                    </div>
+                </div>
+                
+                <div class="notes-grid" id="library-grid">
+                    <div class="note-card">
+                        <div class="note-icon-box blue-bg">💾</div>
+                        <div class="note-info">
+                            <span class="note-tag">Personal • BCA</span>
+                            <h3>C++ Pointers Summary</h3>
+                            <p class="author">Saved from Prof. Sharma</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn-red">Delete</button>
+                            <button class="action-btn-blue">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/library-logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard | NoteVerse</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/faculty.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#FFCC00" stroke-width="2.5"/>
+                    <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="#FFCC00" stroke-width="2.5"/>
+                </svg>
+                <span>NoteVerse</span>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#">📊 Dashboard</a></li>
+                <li><a href="#">📂 My Uploads</a></li>
+                <li><a href="#">📈 Analytics</a></li>
+                <li><a href="#">🎓 Students</a></li>
+                <li><a href="#">⚙️ Settings</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">Log Out</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-header animate-fade-down">
+                <div class="welcome-text">
+                    <h1>Good Morning, <span class="highlight-text">Prof. Sharma</span> 👋</h1>
+                    <p>Here's what's happening with your notes today.</p>
+                </div>
+                <div class="profile-section">
+                    <button class="upload-btn-primary" onclick="openUploadModal()">
+                        + Upload New Note
+                    </button>
+                    <div class="profile-pic">
+                        <span>PS</span> </div>
+                </div>
+            </header>
+
+            <div class="stats-grid animate-fade-up">
+                <div class="stat-card">
+                    <div class="stat-icon blue-bg">📄</div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Total Notes Uploaded</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold-bg">👁️</div>
+                    <div class="stat-info">
+                        <h3>1.2k</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green-bg">⬇️</div>
+                    <div class="stat-info">
+                        <h3>450</h3>
+                        <p>Downloads</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-section animate-fade-up delay-1">
+                <div class="section-header">
+                    <h2>Recent Uploads</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Course & Sem</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="file-icon">📕</span> Java Programming</td>
+                                <td>BCA - 3rd Sem</td>
+                                <td>Feb 12, 2026</td>
+                                <td><span class="status active">Live</span></td>
+                                <td><button class="action-btn">⋮</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="file-icon">📘</span> Data Structures</td>
+                                <td>B.Tech - 2nd Sem</td>
+                                <td>Feb 10, 2026</td>
+                                <td><span class="status active">Live</span></td>
+                                <td><button class="action-btn">⋮</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="file-icon">📙</span> DBMS Notes</td>
+                                <td>BCA - 4th Sem</td>
+                                <td>Feb 08, 2026</td>
+                                <td><span class="status pending">Processing</span></td>
+                                <td><button class="action-btn">⋮</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="uploadModal" class="modal-overlay">
+        <div class="modal-content animate-zoom-in">
+            <div class="modal-header">
+                <h2>Upload New Material</h2>
+                <button class="close-btn" onclick="closeUploadModal()">×</button>
+            </div>
+            
+            <form class="upload-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Course</label>
+                        <select>
+                            <option>BCA</option>
+                            <option>B.Tech (CSE)</option>
+                            <option>BBA</option>
+                            <option>B.Pharm</option>
+                            <option>BA</option>
+                            <option>B.COM</option>
+                            <option>LL.B</option>
+                            <option>Ll.m</option>
+                            <option>D.Pharm</option>
+                            <option>MCA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Semester</label>
+                        <select>
+                            <option>1st Semester</option>
+                            <option>2nd Semester</option>
+                            <option>3rd Semester</option>
+                            <option>4th Semester</option>
+                            <option>5th Semester</option>
+                            <option>6th Semester</option>
+                            <option>7th Semester</option>
+                            <option>8th Semester</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject Name</label>
+                    <input type="text" placeholder="e.g. Artificial Intelligence">
+                </div>
+
+                <div class="form-group">
+                    <label>Title / Description</label>
+                    <input type="text" placeholder="e.g. Unit 1 - Introduction Notes">
+                </div>
+
+                <div class="file-drop-area">
+                    <span class="file-icon">📂</span>
+                    <p>Drag & Drop your PDF here</p>
+                    <span class="or-text">OR</span>
+                    <button type="button" class="browse-btn">Browse File</button>
+                </div>
+
+                <button type="submit" class="submit-upload-btn">Upload Note 🚀</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        function openUploadModal() {
+            document.getElementById('uploadModal').style.display = 'flex';
+        }
+        function closeUploadModal() {
+            document.getElementById('uploadModal').style.display = 'none';
+        }
+        
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('uploadModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>!-->
